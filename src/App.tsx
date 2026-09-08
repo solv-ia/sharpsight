@@ -138,7 +138,7 @@ function App() {
 
           <div className="hero-media" aria-label="Inspector using a thermal camera inside a Tampa Bay home">
             <img
-              src="/thermal-inspection-hero.png"
+              src={`${import.meta.env.BASE_URL}thermal-inspection-hero.png`}
               alt="Home inspector using a thermal imaging camera in a bright Florida home"
               width="1792"
               height="1024"
