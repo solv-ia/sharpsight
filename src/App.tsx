@@ -85,6 +85,12 @@ function App() {
   return (
     <div className="site-shell">
       <header className="topbar">
+        <nav className="nav-links nav-links-start" aria-label="Services navigation">
+          <a href="#services">Services</a>
+          <a href="#thermal">Thermal</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+
         <a className="brand" href="#top" aria-label="Sharp Sight home">
           <img
             className="brand-logo"
@@ -95,18 +101,11 @@ function App() {
           />
         </a>
 
-        <nav className="nav-links" aria-label="Primary navigation">
-          <a href="#services">Services</a>
-          <a href="#thermal">Thermal</a>
-          <a href="#pricing">Pricing</a>
+        <nav className="nav-links nav-links-end" aria-label="Company navigation">
           <a href="#areas">Areas</a>
           <a href="#agents">Agents</a>
+          <a href="#schedule">Contact Us</a>
         </nav>
-
-        <a className="header-cta" href="#schedule">
-          <Phone size={18} aria-hidden="true" />
-          Call or Text
-        </a>
       </header>
 
       <main id="top">
@@ -348,6 +347,10 @@ function App() {
           </form>
         </section>
       </main>
+
+      <a className="floating-call" href="#schedule" aria-label="Contact Sharp Sight" title="Contact Sharp Sight">
+        <Phone size={22} aria-hidden="true" />
+      </a>
     </div>
   );
 }
