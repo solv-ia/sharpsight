@@ -80,7 +80,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   min-height: min(780px, calc(100vh - 82px));
   gap: clamp(36px, 7vw, 104px);
   padding: clamp(54px, 7vw, 104px) clamp(18px, 5vw, 88px);
-  color: #fff9ee;
+  color: #d4ae68;
   background: #1c1a17;
 }
 
