@@ -86,11 +86,13 @@ function App() {
     <div className="site-shell">
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Sharp Sight home">
-          <span className="brand-mark">SS</span>
-          <span>
-            <strong>Sharp Sight</strong>
-            <small>Home Inspections</small>
-          </span>
+          <img
+            className="brand-logo"
+            src={`${import.meta.env.BASE_URL}sharp-sight-logo.png`}
+            alt="Sharp Sight Property Inspections"
+            width="1536"
+            height="1024"
+          />
         </a>
 
         <nav className="nav-links" aria-label="Primary navigation">
