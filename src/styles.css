@@ -33,7 +33,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .brand { display: inline-flex; grid-column: 2; align-items: center; min-width: max-content; }
-.brand-logo { display: block; width: clamp(154px, 14vw, 194px); height: auto; }
+.brand-logo { display: block; width: clamp(231px, 21vw, 291px); height: auto; }
 
 .nav-links {
   display: flex;
@@ -41,8 +41,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   justify-content: center;
   gap: clamp(16px, 2.4vw, 34px);
   color: #4c463d;
-  font-size: 0.78rem;
-  font-weight: 750;
+  font-size: 1rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -210,8 +210,8 @@ section { scroll-margin-top: 92px; }
 }
 
 @media (max-width: 680px) {
-  .topbar { min-height: 82px; gap: 12px; padding-block: 4px; }
-  .brand-logo { width: 146px; }
+  .topbar { min-height: 122px; gap: 12px; padding-block: 4px; }
+  .brand-logo { width: 219px; }
   .hero { padding-top: 48px; }
   h1 { font-size: 3rem; }
   h2 { font-size: 2.2rem; }
