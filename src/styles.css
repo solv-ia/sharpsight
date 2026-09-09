@@ -33,7 +33,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .brand { display: inline-flex; grid-column: 2; align-items: center; min-width: max-content; }
-.brand-logo { display: block; width: clamp(231px, 21vw, 291px); height: auto; }
+.brand-logo { display: block; width: clamp(260px, 23.6vw, 327px); height: auto; }
 
 .nav-links {
   display: flex;
@@ -86,6 +86,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .hero-copy { max-width: 660px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 17px; color: #d4ae68; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.hero-eyebrow { font-size: 0.98rem; font-weight: 900; letter-spacing: 0.12em; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; letter-spacing: 0; }
 h1 { max-width: 690px; margin-bottom: 24px; color: #fff9ee; font-size: clamp(3rem, 5.4vw, 5.85rem); line-height: 1.02; }
@@ -211,7 +212,7 @@ section { scroll-margin-top: 92px; }
 
 @media (max-width: 680px) {
   .topbar { min-height: 122px; gap: 12px; padding-block: 4px; }
-  .brand-logo { width: 219px; }
+  .brand-logo { width: 246px; }
   .hero { padding-top: 48px; }
   h1 { font-size: 3rem; }
   h2 { font-size: 2.2rem; }

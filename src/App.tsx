@@ -111,13 +111,13 @@ function App() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
-            <p className="eyebrow">
-              <MapPin size={16} aria-hidden="true" />
+            <p className="eyebrow hero-eyebrow">
+              <MapPin size={18} aria-hidden="true" />
               Greater Tampa Bay
             </p>
-            <h1>Home inspections with thermal imaging and clear same-day reports.</h1>
+            <h1>A sharper look at the home you&apos;re about to buy.</h1>
             <p className="hero-text">
-              Sharp Sight helps Tampa Bay buyers, homeowners, and real estate agents understand the visible condition of a home before the next decision is due.
+              Detailed home inspections for Tampa Bay buyers, homeowners, and real estate professionals. We examine the home&apos;s major systems and components and explain our findings clearly, so you can make an informed decision.
             </p>
 
             <div className="hero-actions">
@@ -126,14 +126,14 @@ function App() {
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
               <a className="button secondary" href="#thermal">
-                View Thermal Imaging
+                View Sample Report
               </a>
             </div>
 
             <div className="proof-strip" aria-label="Service highlights">
-              <span><ShieldCheck size={17} aria-hidden="true" /> Residential focus</span>
-              <span><ThermometerSun size={17} aria-hidden="true" /> Thermal imaging</span>
-              <span><Clock3 size={17} aria-hidden="true" /> Same-day report goal</span>
+              <span><ShieldCheck size={17} aria-hidden="true" /> Residential Inspections</span>
+              <span><ThermometerSun size={17} aria-hidden="true" /> Modern Inspection Technology</span>
+              <span><Clock3 size={17} aria-hidden="true" /> Clear Digital Reports</span>
             </div>
           </div>
 
@@ -151,19 +151,19 @@ function App() {
         <section className="intent-band" aria-label="Popular inspection needs">
           <a href="#pricing">
             <Home size={22} aria-hidden="true" />
-            <span>Buying a home</span>
+            <span>Buying a Home</span>
           </a>
-          <a href="#thermal">
-            <Camera size={22} aria-hidden="true" />
-            <span>Want thermal imaging</span>
+          <a href="#services">
+            <ClipboardCheck size={22} aria-hidden="true" />
+            <span>Inspection Services</span>
           </a>
           <a href="#agents">
             <UserRoundCheck size={22} aria-hidden="true" />
-            <span>Working with an agent</span>
+            <span>For Real Estate Agents</span>
           </a>
-          <a href="#soon">
-            <Clock3 size={22} aria-hidden="true" />
-            <span>Coming soon services</span>
+          <a href="#areas">
+            <MapPin size={22} aria-hidden="true" />
+            <span>Service Area</span>
           </a>
         </section>
 
