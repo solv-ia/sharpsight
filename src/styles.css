@@ -27,13 +27,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   min-height: 104px;
   padding: 6px clamp(18px, 4vw, 64px);
   color: #201d19;
-  background: rgba(248, 245, 238, 0.97);
+  background: rgba(255, 255, 255, 0.97);
   border-bottom: 1px solid #ddd5c8;
   backdrop-filter: blur(10px);
 }
 
 .brand { display: inline-flex; grid-column: 2; align-items: center; min-width: max-content; }
-.brand-logo { display: block; width: clamp(260px, 23.6vw, 327px); height: auto; }
+.brand-logo { display: block; width: clamp(260px, 27vw, 400px); height: auto; }
 
 .nav-links {
   display: flex;
@@ -125,7 +125,7 @@ p { color: #655e53; line-height: 1.7; }
 .thermal-section { color: #f8f5ee; background: #25221e; }
 .thermal-section h2 { color: #fff9ee; }
 .thermal-section .section-heading > p:not(.eyebrow) { color: #cfc6b8; }
-.thermal-grid, .pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.thermal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .thermal-grid article { padding: 0 clamp(18px, 3vw, 34px); border-left: 1px solid rgba(223, 211, 191, 0.26); }
 .thermal-grid article:first-child { padding-left: 0; border-left: 0; }
 .thermal-grid article:last-child { padding-right: 0; }
@@ -133,14 +133,19 @@ p { color: #655e53; line-height: 1.7; }
 .thermal-grid p { color: #cfc6b8; }
 .thermal-grid svg { color: #d4ae68; }
 
-.pricing-grid { gap: 18px; }
+.pricing-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .price-card { display: flex; flex-direction: column; gap: 20px; min-height: 100%; padding: 27px; border: 1px solid #d9d0c1; background: #fffdf9; }
 .price-card:nth-child(2) { border-color: #b98b3d; }
 .price-card strong { color: #91651f; font-size: 1.38rem; }
+.price-card h3, .price-card .service-description, .price-card .price-note { margin: 0; }
+.service-price { display: grid; gap: 6px; min-height: 72px; align-content: start; }
+.service-price span { color: #655e53; font-size: 0.9rem; line-height: 1.5; }
+.price-note { font-size: 0.9rem; }
+
 .price-card ul { display: grid; gap: 11px; padding: 0; margin: 0; list-style: none; }
 .price-card li { display: grid; grid-template-columns: 17px 1fr; gap: 9px; color: #625b50; font-size: 0.94rem; line-height: 1.48; }
 .price-card li svg { color: #aa7a2c; margin-top: 2px; }
-.price-card a { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; margin-top: auto; color: #3d3020; border-bottom: 1px solid #b98b3d; font-size: 0.9rem; font-weight: 760; transition: color 160ms ease, border-color 160ms ease; }
+.price-card a { text-align: center; padding-block: 10px; line-height: 1.4; display: inline-flex; align-items: center; justify-content: center; min-height: 42px; margin-top: auto; color: #3d3020; border-bottom: 1px solid #b98b3d; font-size: 0.9rem; font-weight: 760; transition: color 160ms ease, border-color 160ms ease; }
 .price-card a:hover { color: #8b621f; border-color: #8b621f; }
 
 .process-section { background: #eee8dd; }
@@ -148,9 +153,10 @@ p { color: #655e53; line-height: 1.7; }
 .process-grid article { padding-top: 20px; border-top: 1px solid #b98b3d; }
 
 .area-section { background: #f8f5ee; }
-.area-list, .soon-list, .agent-points { display: flex; flex-wrap: wrap; gap: 9px; }
-.area-list span, .soon-list span { display: inline-flex; align-items: center; min-height: 31px; padding: 5px 0; color: #595247; font-size: 0.92rem; }
-.area-list span:not(:last-child)::after, .soon-list span:not(:last-child)::after { margin-left: 9px; color: #b98b3d; content: "/"; }
+.area-list, .additional-services-list, .agent-points { display: flex; flex-wrap: wrap; gap: 9px; }
+.area-list span, .additional-services-list span { display: inline-flex; align-items: center; min-height: 31px; padding: 5px 0; color: #595247; font-size: 0.92rem; }
+.area-list span:not(:last-child)::after, .additional-services-list span:not(:last-child)::after { margin-left: 9px; color: #b98b3d; content: "/"; }
+.area-list span:not(:last-child)::after { content: "•"; }
 
 .agent-section { color: #f8f5ee; background: #201e1b; }
 .agent-section h2, .agent-section h3 { color: #fff9ee; }
@@ -160,21 +166,18 @@ p { color: #655e53; line-height: 1.7; }
 .agent-points span { display: inline-flex; align-items: center; gap: 9px; min-height: 62px; color: #eee5d9; border-bottom: 1px solid rgba(232, 222, 207, 0.25); font-size: 0.94rem; font-weight: 650; }
 .agent-points svg { color: #d4ae68; }
 
-.coming-soon { background: #f1ece3; }
-.coming-soon .section-heading { margin-bottom: 26px; }
-.soon-list { max-width: 900px; }
+.additional-services { background: #f1ece3; }
+.additional-services .section-heading { margin-bottom: 26px; }
+.additional-services-list { max-width: 900px; }
 
 .schedule-section { color: #f8f5ee; background: #1c1a17; }
 .schedule-section h2 { color: #fff9ee; }
-.schedule-section > div > p:not(.eyebrow) { color: #d5ccbf; }
-.schedule-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: clamp(22px, 3vw, 34px); background: #f8f5ee; }
-.schedule-form label { display: grid; gap: 8px; color: #595044; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
-.schedule-form .full, .form-button { grid-column: 1 / -1; }
-.schedule-form input, .schedule-form select, .schedule-form textarea { width: 100%; min-height: 45px; padding: 11px 12px; color: #29241e; background: #fffdf9; border: 1px solid #d6cbbc; border-radius: 0; outline: none; }
-.schedule-form textarea { min-height: 112px; resize: vertical; }
-.schedule-form input:focus, .schedule-form select:focus, .schedule-form textarea:focus { border-color: #a2752b; box-shadow: 0 0 0 3px rgba(162, 117, 43, 0.17); }
-.schedule-form .button.primary { color: #fff9ee; background: #201d19; border-color: #201d19; }
-.schedule-form .button.primary:hover { color: #201d19; background: #d4ae68; border-color: #d4ae68; }
+.schedule-copy > p:not(.eyebrow) { color: #d5ccbf; }
+.schedule-card { display: grid; justify-items: start; gap: 24px; padding: clamp(24px, 4vw, 48px); background: #f8f5ee; }
+.schedule-card > svg { color: #a2752b; }
+.schedule-card p { margin: 0; color: #595044; font-size: 1.2rem; }
+.schedule-card .button { max-width: 100%; white-space: normal; line-height: 1.4; }
+.schedule-card .button svg { flex-shrink: 0; }
 
 .floating-call {
   position: fixed;
@@ -197,12 +200,20 @@ p { color: #655e53; line-height: 1.7; }
 
 section { scroll-margin-top: 92px; }
 
+@media (min-width: 681px) {
+  .price-card h3 { min-height: 2.44em; }
+}
+
+@media (max-width: 1280px) {
+  .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 1040px) {
   .nav-links { display: none; }
   .hero, .split, .area-section, .agent-section, .schedule-section { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
   .hero-media, .hero-media img { min-height: 440px; }
-  .thermal-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr; }
+  .thermal-grid, .process-grid { grid-template-columns: 1fr; }
   .thermal-grid { gap: 22px; }
   .thermal-grid article, .thermal-grid article:first-child, .thermal-grid article:last-child { padding: 0; border: 0; }
   .intent-band { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -211,8 +222,9 @@ section { scroll-margin-top: 92px; }
 }
 
 @media (max-width: 680px) {
-  .topbar { min-height: 122px; gap: 12px; padding-block: 4px; }
-  .brand-logo { width: 246px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .topbar { min-height: 104px; gap: 12px; padding-block: 4px; }
+  .brand-logo { width: min(340px, calc(100vw - 36px)); }
   .hero { padding-top: 48px; }
   h1 { font-size: 3rem; }
   h2 { font-size: 2.2rem; }
@@ -226,7 +238,7 @@ section { scroll-margin-top: 92px; }
   .intent-band a:first-child { border-top: 0; }
   .process-grid { gap: 24px; }
   .agent-points { grid-template-columns: 1fr; }
-  .schedule-form { grid-template-columns: 1fr; padding: 20px; }
+  .schedule-card { padding: 24px; }
   .floating-call { right: 18px; bottom: 18px; width: 50px; height: 50px; }
 }
 
@@ -234,3 +246,29 @@ section { scroll-margin-top: 92px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+.credentials-section { background: #fffdf9; border-bottom: 1px solid #ddd5c8; scroll-margin-top: 160px; }
+.credentials-section .eyebrow { color: #91651f; }
+.credentials-section .section-heading { margin-inline: auto; text-align: center; }
+.badge-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 80px) / 6); gap: 16px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 0 0 16px; margin: 0; list-style: none; }
+.badge-track::-webkit-scrollbar { display: none; }
+.badge-track:focus-visible { outline: 3px solid #b5852f; outline-offset: 4px; }
+.badge-slider-controls { display: flex; align-items: center; justify-content: flex-end; gap: 16px; margin-bottom: 20px; color: #655e53; font-size: 0.85rem; }
+.badge-slider-arrows { display: flex; gap: 8px; }
+.badge-slider-arrows button { display: grid; place-items: center; width: 44px; height: 44px; color: #3d3020; background: transparent; border: 1px solid #b98b3d; border-radius: 50%; }
+.badge-slider-arrows button:hover:not(:disabled) { background: #f1eadf; }
+.badge-slider-arrows button:disabled { opacity: 0.35; cursor: default; }
+.badge-card { scroll-snap-align: start; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 20px 12px; border: 1px solid #e4ddd2; background: #fff; text-align: center; }
+.badge-card img { display: block; width: 100%; max-width: 180px; height: 170px; object-fit: contain; }
+.badge-card span { color: #595247; font-size: 0.8rem; font-weight: 650; line-height: 1.5; }
+@media (max-width: 1040px) {
+  .badge-track { grid-auto-columns: calc((100% - 32px) / 3); }
+}
+@media (max-width: 680px) {
+  .credentials-section { scroll-margin-top: 130px; }
+  .badge-track { grid-auto-columns: calc((100% - 12px) / 2); gap: 12px; }
+  .badge-card { padding: 16px 10px; }
+  .badge-card img { height: 140px; }
+}
+
+.availability-note { margin: 24px 0 0; font-size: 0.9rem; }
