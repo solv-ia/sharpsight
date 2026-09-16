@@ -112,70 +112,64 @@ function BadgeSlider() {
   );
 }
 
-const serviceAreas = [
-  'Tampa',
-  'St. Petersburg',
-  'Clearwater',
-  'Brandon',
-  'Riverview',
-  'Wesley Chapel',
-  'Lutz',
-  "Land O' Lakes",
-  'Palm Harbor',
-  'Dunedin',
-  'Safety Harbor',
-  'Largo',
+const schedulingUrl = 'https://app.spectora.com/home-inspectors/my-inspection-company-88f9c0e9f5/schedule?iframe=1';
+
+const serviceAreas = ['Pinellas', 'Hillsborough', 'Pasco', 'Manatee', 'Sarasota', 'Surrounding Areas'];
+
+const inspectionServices = [
+  {
+    name: 'Home inspection',
+    price: 'Starting at $350',
+    description: 'Complete visual inspection of the home’s major systems and components.',
+    items: [
+      'Roof, exterior, structure, attic, interior, plumbing, electrical, HVAC & appliances',
+      'Thermal imaging when appropriate',
+      'Clear digital report with photos',
+      'Report walkthrough available',
+    ],
+    note: 'Homes over 1,500 sq. ft. priced at +$0.15/sq. ft.',
+  },
+  {
+    name: '4-point inspection',
+    price: '$125',
+    priceDetail: 'when added to a Home Inspection',
+    description: 'Insurance-focused documentation of the home’s four major systems.',
+    items: ['Roof', 'Electrical', 'Plumbing', 'HVAC'],
+    note: 'Florida insurance documentation.',
+  },
+  {
+    name: 'Wind mitigation inspection',
+    price: '$125',
+    priceDetail: 'when added to a Home Inspection',
+    description: 'Evaluation of qualifying wind-resistant construction features for insurance purposes.',
+    items: ['Roof covering and attachment', 'Roof-to-wall connections', 'Opening protection', 'Roof geometry and related features'],
+  },
 ];
 
-const packages = [
-  {
-    name: 'Buyer Standard',
-    price: 'Starting at $375',
-    description: 'A complete visual home inspection for buyers under contract.',
-    items: ['Roof, exterior, interior, attic, structure, plumbing, electrical, HVAC', 'Photo-rich report', 'Report walkthrough available'],
-  },
-  {
-    name: 'Buyer Plus Thermal',
-    price: 'Starting at $475',
-    description: 'The core inspection with thermal imaging added where it matters.',
-    items: ['Thermal scan for visible temperature anomalies', 'Moisture, insulation, HVAC, and electrical clues', 'Clear notes on what needs follow-up'],
-  },
-  {
-    name: 'Remote Buyer',
-    price: 'Starting at $525',
-    description: 'Built for out-of-state buyers and busy agents.',
-    items: ['Enhanced photo documentation', 'Thermal imaging included', 'Post-inspection call with buyer or agent'],
-  },
-];
-
-const comingSoon = [
-  '4-point inspections',
-  'Wind mitigation',
-  'Roof certifications',
-  'WDO coordination',
-  'Sewer scopes',
-  'Pool and spa',
-  'Mold and air quality',
-  'New construction',
-  '11-month warranty',
-  'Commercial inspections',
+const additionalServices = [
+  '4-Point Inspection',
+  'Wind Mitigation Inspection',
+  'Manufactured Home Inspection',
+  'Pre-Drywall Inspection',
+  '11-Month Warranty Inspection',
+  'Annual Maintenance Inspection',
 ];
 
 const inspectionSteps = [
   {
     icon: CalendarCheck,
     title: 'Schedule fast',
-    text: 'Request a time online and include the property address, square footage, and inspection deadline.',
+    text: 'Request a time online and provide the property address, square footage, and any important timing details.',
   },
   {
     icon: FileSearch,
     title: 'Inspect with context',
-    text: 'We inspect the visible systems and use thermal imaging to document meaningful temperature patterns.',
+    text: 'We inspect the home’s visible and accessible systems and components, using thermal imaging when appropriate to document meaningful temperature patterns.',
   },
   {
     icon: ClipboardCheck,
     title: 'Review clearly',
-    text: 'You receive a clean report built for decisions, negotiations, and agent follow-up.',
+    text: 'You receive a clear digital report with photos and straightforward findings to support decisions, negotiations, maintenance, and follow-up.',
   },
 ];
 
@@ -211,15 +205,15 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow hero-eyebrow">
               <MapPin size={18} aria-hidden="true" />
-              Greater Tampa Bay
+              West Central Florida
             </p>
             <h1>A sharper look at the home you&apos;re about to buy.</h1>
             <p className="hero-text">
-              Detailed home inspections for Tampa Bay buyers, homeowners, and real estate professionals. We examine the home&apos;s major systems and components and explain our findings clearly, so you can make an informed decision.
+              Detailed home inspections for buyers, homeowners, and real estate professionals throughout West Central Florida. We examine the home&apos;s major systems and components and explain our findings clearly, so you can make an informed decision.
             </p>
 
             <div className="hero-actions">
-              <a className="button primary" href="#schedule">
+              <a className="button primary" href={schedulingUrl}>
                 Schedule Inspection
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
@@ -235,7 +229,7 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-media" aria-label="Inspector using a thermal camera inside a Tampa Bay home">
+          <div className="hero-media" aria-label="Inspector using a thermal camera inside a West Central Florida home">
             <img
               src={`${import.meta.env.BASE_URL}thermal-inspection-hero.png`}
               alt="Home inspector using a thermal imaging camera in a bright Florida home"
@@ -277,7 +271,7 @@ function App() {
         <section className="section split" id="services">
           <div>
             <p className="eyebrow">Launch focus</p>
-            <h2>Residential inspection first, with thermal imaging built into the story.</h2>
+            <h2>Residential inspection first, with thermal imaging used where it adds value.</h2>
           </div>
           <div className="feature-list">
             <article>
@@ -288,12 +282,12 @@ function App() {
             <article>
               <CheckCircle2 size={22} aria-hidden="true" />
               <h3>Thermal imaging</h3>
-              <p>Temperature-anomaly documentation that can support moisture, insulation, HVAC, and electrical follow-up decisions.</p>
+              <p>Thermal imaging, when appropriate, may help reveal temperature anomalies related to moisture, insulation, HVAC, and electrical concerns.</p>
             </article>
             <article>
               <CheckCircle2 size={22} aria-hidden="true" />
-              <h3>Buyer-ready reporting</h3>
-              <p>Clear photos, plain-English findings, priorities, and optional report walkthrough support for buyers and agents.</p>
+              <h3>Clear, client-ready reporting</h3>
+              <p>Clear photos, plain-English findings, priorities, and optional report walkthrough support for clients and agents.</p>
             </article>
           </div>
         </section>
@@ -301,9 +295,9 @@ function App() {
         <section className="section thermal-section" id="thermal">
           <div className="section-heading">
             <p className="eyebrow">Thermal imaging</p>
-            <h2>A stronger visual layer for Tampa Bay homes.</h2>
+            <h2>A stronger visual layer for West Central Florida homes.</h2>
             <p>
-              Thermal imaging is not X-ray vision. It helps identify visible temperature differences that deserve closer inspection, documentation, or specialist follow-up.
+              Thermal imaging is not X-ray vision. When appropriate, it can help identify surface temperature patterns that deserve closer inspection, documentation, or further evaluation.
             </p>
           </div>
 
@@ -311,35 +305,36 @@ function App() {
             <article>
               <ThermometerSun size={24} aria-hidden="true" />
               <h3>Moisture clues</h3>
-              <p>Potential cooling patterns around ceilings, walls, windows, and plumbing areas after the inspector confirms context.</p>
+              <p>Temperature patterns may indicate areas of possible moisture concern around ceilings, walls, windows, and plumbing. Findings are verified with appropriate inspection methods when possible.</p>
             </article>
             <article>
               <Home size={24} aria-hidden="true" />
               <h3>Envelope gaps</h3>
-              <p>Missing insulation, air leakage, and attic-related temperature differences that can affect comfort and efficiency.</p>
+              <p>Thermal patterns may reveal possible missing or uneven insulation, air leakage, and attic-related conditions that can affect comfort and efficiency.</p>
             </article>
             <article>
               <ShieldCheck size={24} aria-hidden="true" />
               <h3>System concerns</h3>
-              <p>Abnormal heat signatures around electrical components or HVAC distribution that should be reviewed carefully.</p>
+              <p>Unusual heat patterns around electrical components or HVAC distribution may indicate conditions that deserve closer evaluation.</p>
             </article>
           </div>
         </section>
 
         <section className="section" id="pricing">
           <div className="section-heading compact">
-            <p className="eyebrow">Packages</p>
-            <h2>Simple inspection options for buyers and agents.</h2>
+            <p className="eyebrow">Pricing</p>
+            <h2>Clear pricing. No confusing inspection packages.</h2>
           </div>
 
           <div className="pricing-grid">
-            {packages.map((item) => (
+            {inspectionServices.map((item) => (
               <article className="price-card" key={item.name}>
-                <div>
-                  <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                <h3>{item.name}</h3>
+                <div className="service-price">
+                  <strong>{item.price}</strong>
+                  {item.priceDetail ? <span>{item.priceDetail}</span> : null}
                 </div>
-                <strong>{item.price}</strong>
+                <p className="service-description">{item.description}</p>
                 <ul>
                   {item.items.map((point) => (
                     <li key={point}>
@@ -348,16 +343,32 @@ function App() {
                     </li>
                   ))}
                 </ul>
-                <a href="#schedule">Request this inspection</a>
+                {item.note ? <p className="price-note">{item.note}</p> : null}
+                <a href={schedulingUrl}>Schedule Inspection</a>
               </article>
             ))}
           </div>
+          <article className="commercial-inspections" aria-labelledby="commercial-title">
+            <div className="commercial-copy">
+              <p className="eyebrow">Commercial services</p>
+              <h3 id="commercial-title">Commercial property inspections</h3>
+              <p>Professional inspections for offices, retail spaces, warehouses, and other commercial properties.</p>
+            </div>
+            <div className="commercial-scope">
+              <h4>An agreed scope of work</h4>
+              <p>Inspections are performed under an agreed scope of work and applicable commercial inspection standards.</p>
+              <a className="button primary" href={schedulingUrl}>
+                Schedule a commercial inspection
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
+            </div>
+          </article>
         </section>
 
         <section className="section process-section">
           <div className="section-heading compact">
             <p className="eyebrow">Process</p>
-            <h2>Built around inspection deadlines.</h2>
+            <h2>Built around your timeline.</h2>
           </div>
           <div className="process-grid">
             {inspectionSteps.map((step) => {
@@ -375,13 +386,13 @@ function App() {
 
         <section className="section area-section" id="areas">
           <div>
-            <p className="eyebrow">Service area</p>
-            <h2>Focused on Greater Tampa Bay.</h2>
+            <p className="eyebrow">Serving West Central Florida</p>
+            <h2>Serving homes across West Central Florida.</h2>
             <p>
-              Local pages should be built around real Tampa Bay inspection concerns: older electrical systems, moisture intrusion, roof age, humidity, coastal exposure, and fast-growing suburban construction.
+              Sharp Sight provides professional inspection services throughout Pinellas, Hillsborough, Pasco, Manatee, Sarasota, and surrounding communities. From coastal properties to newer inland construction, every inspection is approached with attention to the home’s condition, construction, and local environment.
             </p>
           </div>
-          <div className="area-list" aria-label="Greater Tampa Bay service areas">
+          <div className="area-list" aria-label="West Central Florida service areas">
             {serviceAreas.map((area) => (
               <span key={area}>{area}</span>
             ))}
@@ -391,67 +402,46 @@ function App() {
         <section className="section agent-section" id="agents">
           <div className="agent-copy">
             <p className="eyebrow">For agents</p>
-            <h2>A smoother inspection handoff for Tampa Bay transactions.</h2>
+            <h2>A smoother inspection handoff for West Central Florida transactions.</h2>
             <p>
-              Buyers need facts quickly. Agents need a responsive inspector, a clear report, and fewer loose ends after delivery.
+              Buyers need clear information quickly. Agents need a responsive inspector, straightforward communication, and a report that’s easy to navigate.
             </p>
           </div>
           <div className="agent-points">
-            <span><Clock3 size={18} aria-hidden="true" /> Same-day report goal</span>
-            <span><Camera size={18} aria-hidden="true" /> Thermal imaging option</span>
+            <span><Clock3 size={18} aria-hidden="true" /> Prompt report delivery</span>
+            <span><Camera size={18} aria-hidden="true" /> Thermal imaging when appropriate</span>
             <span><ClipboardCheck size={18} aria-hidden="true" /> Buyer-friendly summaries</span>
             <span><Phone size={18} aria-hidden="true" /> Call/text coordination</span>
           </div>
         </section>
 
-        <section className="section coming-soon" id="soon">
+        <section className="section additional-services" id="soon">
           <div className="section-heading compact">
-            <p className="eyebrow">Coming soon</p>
-            <h2>Future services can be visible without confusing launch availability.</h2>
+            <p className="eyebrow">Additional services</p>
+            <h2>More ways to protect and understand your property.</h2>
           </div>
-          <div className="soon-list">
-            {comingSoon.map((service) => (
+          <div className="additional-services-list">
+            {additionalServices.map((service) => (
               <span key={service}>{service}</span>
             ))}
           </div>
+          <p className="availability-note">Availability may vary by property type and inspection scope.</p>
         </section>
 
         <section className="section schedule-section" id="schedule">
           <div>
             <p className="eyebrow">Request an inspection</p>
-            <h2>Send the address and deadline. Sharp Sight will confirm timing.</h2>
+            <h2>Schedule your inspection with Sharp Sight.</h2>
+            <p>Choose your inspection service, enter the property details, select your preferred date and time, and submit your request. We’ll confirm the appointment once everything is reviewed.</p>
           </div>
-          <form className="schedule-form">
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" autoComplete="name" />
-            </label>
-            <label>
-              Phone
-              <input type="tel" name="phone" placeholder="Best number" autoComplete="tel" inputMode="tel" />
-            </label>
-            <label>
-              Property address
-              <input type="text" name="address" placeholder="Street, city, ZIP" autoComplete="street-address" />
-            </label>
-            <label>
-              Inspection type
-              <select name="inspectionType" defaultValue="Buyer Plus Thermal">
-                <option>Buyer Standard</option>
-                <option>Buyer Plus Thermal</option>
-                <option>Remote Buyer</option>
-                <option>Pre-Listing Clarity</option>
-              </select>
-            </label>
-            <label className="full">
-              Notes
-              <textarea name="notes" rows={4} placeholder="Inspection deadline, square footage, agent contact, or access notes" />
-            </label>
-            <button className="button primary form-button" type="submit">
-              Request Confirmation
+          <div className="schedule-card">
+            <CalendarCheck size={32} aria-hidden="true" />
+            <p>Book online through our secure scheduling system.</p>
+            <a className="button primary" href={schedulingUrl}>
+              SCHEDULE INSPECTION
               <ArrowRight size={18} aria-hidden="true" />
-            </button>
-          </form>
+            </a>
+          </div>
         </section>
       </main>
 
