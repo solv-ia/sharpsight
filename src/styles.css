@@ -27,13 +27,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   min-height: 104px;
   padding: 6px clamp(18px, 4vw, 64px);
   color: #201d19;
-  background: rgba(248, 245, 238, 0.97);
+  background: rgba(255, 255, 255, 0.97);
   border-bottom: 1px solid #ddd5c8;
   backdrop-filter: blur(10px);
 }
 
 .brand { display: inline-flex; grid-column: 2; align-items: center; min-width: max-content; }
-.brand-logo { display: block; width: clamp(260px, 23.6vw, 327px); height: auto; }
+.brand-logo { display: block; width: clamp(260px, 27vw, 400px); height: auto; }
 
 .nav-links {
   display: flex;
@@ -211,8 +211,8 @@ section { scroll-margin-top: 92px; }
 }
 
 @media (max-width: 680px) {
-  .topbar { min-height: 122px; gap: 12px; padding-block: 4px; }
-  .brand-logo { width: 246px; }
+  .topbar { min-height: 104px; gap: 12px; padding-block: 4px; }
+  .brand-logo { width: min(340px, calc(100vw - 36px)); }
   .hero { padding-top: 48px; }
   h1 { font-size: 3rem; }
   h2 { font-size: 2.2rem; }
@@ -233,4 +233,28 @@ section { scroll-margin-top: 92px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+
+.credentials-section { background: #fffdf9; border-bottom: 1px solid #ddd5c8; scroll-margin-top: 160px; }
+.credentials-section .eyebrow { color: #91651f; }
+.credentials-section .section-heading { margin-inline: auto; text-align: center; }
+.badge-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 80px) / 6); gap: 16px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 0 0 16px; margin: 0; list-style: none; }
+.badge-track::-webkit-scrollbar { display: none; }
+.badge-track:focus-visible { outline: 3px solid #b5852f; outline-offset: 4px; }
+.badge-slider-controls { display: flex; align-items: center; justify-content: flex-end; gap: 16px; margin-bottom: 20px; color: #655e53; font-size: 0.85rem; }
+.badge-slider-arrows { display: flex; gap: 8px; }
+.badge-slider-arrows button { display: grid; place-items: center; width: 44px; height: 44px; color: #3d3020; background: transparent; border: 1px solid #b98b3d; border-radius: 50%; }
+.badge-slider-arrows button:hover:not(:disabled) { background: #f1eadf; }
+.badge-slider-arrows button:disabled { opacity: 0.35; cursor: default; }
+.badge-card { scroll-snap-align: start; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 20px 12px; border: 1px solid #e4ddd2; background: #fff; text-align: center; }
+.badge-card img { display: block; width: 100%; max-width: 180px; height: 170px; object-fit: contain; }
+.badge-card span { color: #595247; font-size: 0.8rem; font-weight: 650; line-height: 1.5; }
+@media (max-width: 1040px) {
+  .badge-track { grid-auto-columns: calc((100% - 32px) / 3); }
+}
+@media (max-width: 680px) {
+  .credentials-section { scroll-margin-top: 130px; }
+  .badge-track { grid-auto-columns: calc((100% - 12px) / 2); gap: 12px; }
+  .badge-card { padding: 16px 10px; }
+  .badge-card img { height: 140px; }
 }
