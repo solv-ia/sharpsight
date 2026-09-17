@@ -224,7 +224,12 @@ function App() {
                 Schedule Inspection
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
-              <a className="button secondary" href="#thermal">
+              <a
+                className="button secondary"
+                href="https://reports.spectora.com/v/reports/156cd51a-e77e-430d-a242-9527824c1c45?ignoreClientComplete=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View Sample Report
               </a>
             </div>
@@ -437,7 +442,12 @@ function App() {
         </section>
       </main>
 
-      <a className="floating-call" href="#schedule" aria-label="Contact Sharp Sight" title="Contact Sharp Sight">
+      <a
+        className="floating-call"
+        href="tel:+18137762222"
+        aria-label="Call Sharp Sight at +1 (813) 776-2222"
+        title="Call Sharp Sight: +1 (813) 776-2222"
+      >
         <Phone size={22} aria-hidden="true" />
       </a>
     </div>
