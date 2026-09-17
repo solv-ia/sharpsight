@@ -146,7 +146,7 @@ const inspectionServices = [
   },
   {
     name: 'Commercial property inspections',
-    price: 'Starting at $400',
+    price: 'Starting at $700',
     description: 'Professional inspections performed under an agreed Scope of Work and applicable commercial inspection standards.',
     items: ['Offices', 'Retail spaces', 'Warehouses', 'Other commercial properties'],
     action: 'Schedule a Commercial Inspection',
